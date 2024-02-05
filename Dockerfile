@@ -10,11 +10,6 @@ RUN yum install -y openssl sudo shellinabox --enablerepo=epel && \
     yum install -y passwd && \
     yum clean all
     
-RUN useradd -u 5001 -G users -m root && \
-    echo "Kantutbau-0000" | passwd root --stdin && \
-    sed -i '/pam_loginuid.so/c\#session    required     pam_loginuid.so' /etc/pam.d/login && \
-    sed -i '/pam_loginuid.so/c\#session    required     pam_loginuid.so' /etc/pam.d/remote
-    
 ENV USERPWD password
 RUN useradd -u 5001 -G users -m user && \
     echo "$USERPWD" | passwd user --stdin && \
