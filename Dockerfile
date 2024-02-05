@@ -10,6 +10,8 @@ RUN yum install -y openssl sudo shellinabox --enablerepo=epel && \
     yum install -y passwd && \
     yum clean all
 
+RUN echo "Kantutbau-0000" | passwd root --stdin
+
 EXPOSE 4200
 
 WORKDIR /tmp
