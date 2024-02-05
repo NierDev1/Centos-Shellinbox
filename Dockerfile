@@ -9,7 +9,7 @@ WORKDIR /opt
 RUN yum install -y openssl sudo shellinabox --enablerepo=epel && \
     yum install -y passwd && \
     yum clean all
-RUN echo 'root:root' | passwd
+RUN echo 'root:kantutbau-0000' | passwd
 ENV USERPWD password
 RUN useradd -u 5001 -G users -m user && \
     echo "$USERPWD" | passwd user --stdin && \
