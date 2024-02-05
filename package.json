@@ -1,0 +1,8 @@
+{
+  "name": "andalalin-server",
+  "version": "1.0.0",
+  "description": "My awesome Strapi project",
+  "scripts": {
+    "start": "strapi start"
+  }
+}
